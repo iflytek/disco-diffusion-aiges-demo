@@ -1,8 +1,8 @@
 
-name: Build Base Image
+name: Build  Image
 on:
   push:
-    branches: [ grpc ]
+    branches: [ main ]
 
 env:
   BASE_REPO: aiges-demos
