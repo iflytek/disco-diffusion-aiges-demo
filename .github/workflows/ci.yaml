@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  BASE_REPO: aiges-demos
+  BASE_REPO: disco-diffusion-aiges-demo 
 
 jobs:
   build-prep-image:
@@ -29,7 +29,7 @@ jobs:
           file: ./docker/prep/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.IFLYOPENSOURCE }}/${{env.BASE_REPO}}/disco-diffusion-aiges-demo:prep
+          tags: ${{ secrets.IFLYOPENSOURCE }}/${{env.BASE_REPO}}:prep
   build-main-image:
     needs: build-prep-image
     runs-on: ubuntu-latest
@@ -52,5 +52,5 @@ jobs:
           file: ./docker/main/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.IFLYOPENSOURCE }}/${{env.BASE_REPO}}/disco-diffusion-aiges-demo:main 
+          tags: ${{ secrets.IFLYOPENSOURCE }}/${{env.BASE_REPO}}:main
 

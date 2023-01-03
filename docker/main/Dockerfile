@@ -2,7 +2,7 @@
 # are large and prone to take long to copy...
 #FROM disco-diffusion-prep:5.1 AS modelprep
 
-FROM iflyopensource/aiges-demos/disco-diffusion-aiges-demo:prep AS modelprep
+FROM iflyopensource/disco-diffusion-aiges-demo:prep AS modelprep
 
 FROM nvcr.io/nvidia/pytorch:21.08-py3
 
