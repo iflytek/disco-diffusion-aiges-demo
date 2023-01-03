@@ -31,6 +31,7 @@ jobs:
           push: true
           tags: ${{ secrets.IFLYOPENSOURCE }}/${{env.BASE_REPO}}/disco-diffusion-aiges-demo:prep
   build-main-image:
+    needs: build-prep-image
     runs-on: ubuntu-latest
     # 项目构建
     steps:
